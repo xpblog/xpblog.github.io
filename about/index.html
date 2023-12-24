@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>棚子家</title>
     <style>
-        div > p {
+        div>p {
             margin: 0;
             padding: 0.5rem;
             overflow: auto;
@@ -12,53 +13,96 @@
             letter-spacing: 1px;
             text-align: justify;
         }
+
         blockquote {
             padding-left: 25px;
             padding-top: 10px;
             font-weight: bolder;
             padding-bottom: 10px;
-            background: #f7f7f7; 
+            background: #f7f7f7;
             border-left: 15px solid #ffffff;
             text-align: left;
             /* border-radius: 15px; */
             margin-left: 1rem;
         }
-        blockquote::before{
+
+        blockquote::before {
             content: "###";
             color: #c97c7c;
         }
-        blockquote::after{
+
+        blockquote::after {
             content: "###";
             color: #c97c7c;
         }
-        h1::before,h2::before,h3::before,h4::before,h5::before,h6::before{
+
+        h1::before,
+        h2::before,
+        h3::before,
+        h4::before,
+        h5::before,
+        h6::before {
             content: '# ';
             color: #000;
         }
-        h1::after,h2::after,h3::after,h4::after,h5::after,h6::after{
+
+        h1::after,
+        h2::after,
+        h3::after,
+        h4::after,
+        h5::after,
+        h6::after {
             content: ' #';
             color: #000;
         }
-        h1,h2,h3,h4,h5,h6{
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             text-decoration: dashed;
             background: #e7e7e7;
             padding: 4px;
             letter-spacing: 2px;
         }
+        li {
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
     </style>
-<meta name="generator" content="Hexo 7.0.0"></head>
+    <meta name="generator" content="Hexo 7.0.0">
+</head>
+
 <body style="font-family: monospace;">
     <div>
-        
+
         <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
             <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; ">棚子家</a> &nbsp;
-			<a href="/about/index.html" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[关于我]</a>
+            <a href="/about/index.html" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[关于我]</a>
         </div>
-        
-        
+
+
+        <article>
+            <h3>关于我</h3>
+            <p style="letter-spacing: 1px;">非著名<span style="font-weight: bold;">程序员</span>，编程界一名小学生</p>
+            <ul>
+                <li>主打Java，涉猎Python/Go</li>
+                <li>技术折腾党</li>
+                <li>十年互联网生涯</li>
+                <li>懒人</li>
+            </ul>
+            <p>
+                <span style="font-weight: bold;">Email：</span>xpblog@163.com <br>
+                <span style="font-weight: bold;">GitHub：</span>http://github.com/xpblog
+            </p>
+        </article>
+
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
-        Contact me at .
+            Contact me at .
         </div>
     </div>
 </body>
+
 </html>
