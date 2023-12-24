@@ -5,15 +5,45 @@
     <title>棚子家</title>
     <style>
         div > p {
-            background: #f7f7f7;
-            margin: 1rem 0;
-            padding: .9375rem;
+            margin: 0;
+            padding: 0.5rem;
             overflow: auto;
-            line-height: 1.75;
+            line-height: 2;
+            letter-spacing: 1px;
+            text-align: justify;
         }
         blockquote {
-            padding: 10px;
+            padding-left: 25px;
+            padding-top: 10px;
             font-weight: bolder;
+            padding-bottom: 10px;
+            background: #f7f7f7; 
+            border-left: 15px solid #ffffff;
+            text-align: left;
+            /* border-radius: 15px; */
+            margin-left: 1rem;
+        }
+        blockquote::before{
+            content: "###";
+            color: #c97c7c;
+        }
+        blockquote::after{
+            content: "###";
+            color: #c97c7c;
+        }
+        h1::before,h2::before,h3::before,h4::before,h5::before,h6::before{
+            content: '# ';
+            color: #000;
+        }
+        h1::after,h2::after,h3::after,h4::after,h5::after,h6::after{
+            content: ' #';
+            color: #000;
+        }
+        h1,h2,h3,h4,h5,h6{
+            text-decoration: dashed;
+            background: #e7e7e7;
+            padding: 4px;
+            letter-spacing: 2px;
         }
     </style>
 <meta name="generator" content="Hexo 7.0.0"></head>
@@ -25,9 +55,9 @@
         </div>
         
         
-            <h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;">  # 也谈降维打击</h1>
+            <h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">也谈降维打击</h1>
 <span style="color: #686868;display: block;">[作者] 棚子</span>
-<span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom: 1px dashed #979797;">[创建时间] 2023-12-21 23:39:55</span>
+<span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2023-12-21 23:39:55</span>
 <h3 id="什么是维度？"><a href="#什么是维度？" class="headerlink" title="什么是维度？"></a>什么是维度？</h3><p>维度，数学上有线面体来描述一维，二维，三维。物理上有一维空间，二维空间，三维空间……那么什么叫维度？实际上，维度本质就是传递信息的渠道，比如数学上的x，y轴构成的平面，当多了z轴的维度的时候，当多了一维度时，就意味着多了一条传递信息的渠道，它能通过z轴来传递更多的信息。</p>
 <h3 id="什么是降维打击？"><a href="#什么是降维打击？" class="headerlink" title="什么是降维打击？"></a>什么是降维打击？</h3><p>降维打击，就是比对手通过多出的维度，知道&#x2F;看到更多的信息。比如孙武的知己知彼百战不殆。当双方了解的信息是不成比例的，就能够成降维打击。</p>
 <p>举例，一年级的学生计算十个10的和是多少？只能用加法，要知道结果需要算10步。但是二年级的学生学了乘法(多了信息渠道)，只需算1步。效率是成倍的提升。</p>

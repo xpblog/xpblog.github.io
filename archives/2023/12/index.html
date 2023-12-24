@@ -5,15 +5,45 @@
     <title>棚子家</title>
     <style>
         div > p {
-            background: #f7f7f7;
-            margin: 1rem 0;
-            padding: .9375rem;
+            margin: 0;
+            padding: 0.5rem;
             overflow: auto;
-            line-height: 1.75;
+            line-height: 2;
+            letter-spacing: 1px;
+            text-align: justify;
         }
         blockquote {
-            padding: 10px;
+            padding-left: 25px;
+            padding-top: 10px;
             font-weight: bolder;
+            padding-bottom: 10px;
+            background: #f7f7f7; 
+            border-left: 15px solid #ffffff;
+            text-align: left;
+            /* border-radius: 15px; */
+            margin-left: 1rem;
+        }
+        blockquote::before{
+            content: "###";
+            color: #c97c7c;
+        }
+        blockquote::after{
+            content: "###";
+            color: #c97c7c;
+        }
+        h1::before,h2::before,h3::before,h4::before,h5::before,h6::before{
+            content: '# ';
+            color: #000;
+        }
+        h1::after,h2::after,h3::after,h4::after,h5::after,h6::after{
+            content: ' #';
+            color: #000;
+        }
+        h1,h2,h3,h4,h5,h6{
+            text-decoration: dashed;
+            background: #e7e7e7;
+            padding: 4px;
+            letter-spacing: 2px;
         }
     </style>
 <meta name="generator" content="Hexo 7.0.0"></head>
