@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>棚子家</title>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <style>
+        .highlight, pre{
+            line-height: normal;
+            letter-spacing: 0;
+            background: #f7f7f7;
+            color: #4d4d4c;
+            margin: 5px auto;
+        }
+        ul li {
+            line-height: 2;
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+        div > p {
+            margin: 0;
+            padding: 0.5rem;
+            overflow: auto;
+            line-height: 2;
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+        blockquote {
+            padding-left: 25px;
+            padding-top: 10px;
+            font-weight: bolder;
+            padding-bottom: 10px;
+            background: #f7f7f7; 
+            border-left: 15px solid #ffffff;
+            text-align: left;
+            /* border-radius: 15px; */
+            margin-left: 1rem;
+        }
+        blockquote::before{
+            content: "###";
+            color: #c97c7c;
+        }
+        blockquote::after{
+            content: "###";
+            color: #c97c7c;
+        }
+        h1::before,h2::before,h3::before,h4::before,h5::before,h6::before{
+            content: '# ';
+            color: #000;
+        }
+        h1::after,h2::after,h3::after,h4::after,h5::after,h6::after{
+            content: ' #';
+            color: #000;
+        }
+        h1,h2,h3,h4,h5,h6{
+            text-decoration: dashed;
+            background: #e7e7e7;
+            padding: 4px;
+            letter-spacing: 2px;
+        }
+    </style>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body style="font-family: monospace;">
+    <div>
+        
+        <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
+            <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; ">棚子家</a> &nbsp;
+			<a href="/about/index.html" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[关于我]</a>
+        </div>
+        
+        
+            <h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">Hexo博客添加访客统计</h1>
+<span style="color: #686868;display: block;">[作者] 棚子</span>
+<span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2023-12-25 16:03:39</span>
+<h3 id="给博客添加访客统计"><a href="#给博客添加访客统计" class="headerlink" title="给博客添加访客统计"></a>给博客添加访客统计</h3><p>最简单的方式则是用 <a target="_blank" rel="noopener" href="https://ibruce.info/2015/04/04/busuanzi/">不蒜子</a>，仅仅需要两步</p>
+<ul>
+<li>第一步引入js<br>在需要统计的页面引入<code>不蒜子</code>的js<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>第二步统计标签<br>在需要展示统计的地方，添加统计标签即可。<br>数量统计有两种计算规则，一种是pv(单个用户连续点击n篇文章，记录n次访问量，适合页面阅读量统计)，一种是uv(单个用户连续点击n篇文章，记录1次访问量，适合网站访问人数统计)<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;</span></span><br><span class="line">    本站总访问量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span></span><br><span class="line">    本站访客数<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>以上，Thanks</p>
+
+
+        
+        <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
+        <span>Contact me at . <br></span>
+        
+        
+            <span id="busuanzi_container_page_pv"  style="line-height: 1.5;">
+                [阅读量 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次]
+            </span>
+        
+        </div>
+    </div>
+
+</body>
+</html>
