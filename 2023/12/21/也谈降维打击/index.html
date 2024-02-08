@@ -64,6 +64,10 @@
         .tags{
             color: #9E9E9E;
         }
+		pre {
+		  white-space: pre-wrap;
+		  text-align: left;
+		}
     </style>
     
 <meta name="generator" content="Hexo 7.0.0"></head>
@@ -72,9 +76,15 @@
         
         <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
             <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; ">棚子家</a> &nbsp;
+			
+				<a href="/tags/%E6%84%9F%E6%82%9F/" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[感悟]</a>
+			
+				<a href="/tags/%E6%8A%80%E6%9C%AF/" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[技术]</a>
+			
 			<a href="/about/index.html" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[关于我]</a>
-        </div>
+		</div>
         
+		
         
             <h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">也谈降维打击</h1>
 <span style="color: #686868;display: block;">[作者] 棚子</span>
@@ -83,7 +93,6 @@
 <h3 id="什么是降维打击？"><a href="#什么是降维打击？" class="headerlink" title="什么是降维打击？"></a>什么是降维打击？</h3><p>降维打击，就是比对手通过多出的维度，知道&#x2F;看到更多的信息。比如孙武的知己知彼百战不殆。当双方了解的信息是不成比例的，就能够成降维打击。</p>
 <p>举例，一年级的学生计算十个10的和是多少？只能用加法，要知道结果需要算10步。但是二年级的学生学了乘法(多了信息渠道)，只需算1步。效率是成倍的提升。</p>
 <p>两个拳击手，当处于同一维度时，比的是谁比谁肌肉更有力量。但维度不同时，当一方比如蒙着眼(少一信息渠道)，比对手少一维度时。即使你肌肉块再大，搏击技巧再强，一个没练过拳击的小孩都可以把你绊倒，这就是降维打击。</p>
-
 
 
         
@@ -98,5 +107,11 @@
         </div>
     </div>
     <a href="javascript:window.scrollTo( 0, 0 );" target="_self" style="position: fixed;bottom: 80px;right: 30px;opacity: 1;cursor: pointer;">回到顶部</a>
+	<script>
+		function tagLink(tagName) {
+		  var url = '/tags/' + tagName + '/';
+		  return '<a href="' + url + '">' + tagName + '</a>';
+		}
+	</script>
 </body>
 </html>

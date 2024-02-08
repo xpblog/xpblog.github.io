@@ -64,6 +64,10 @@
         .tags{
             color: #9E9E9E;
         }
+		pre {
+		  white-space: pre-wrap;
+		  text-align: left;
+		}
     </style>
     
 <meta name="generator" content="Hexo 7.0.0"></head>
@@ -72,9 +76,15 @@
         
         <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
             <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; ">棚子家</a> &nbsp;
+			
+				<a href="/tags/%E6%84%9F%E6%82%9F/" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[感悟]</a>
+			
+				<a href="/tags/%E6%8A%80%E6%9C%AF/" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[技术]</a>
+			
 			<a href="/about/index.html" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[关于我]</a>
-        </div>
+		</div>
         
+		
         
             <h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">Hexo博客添加访客统计</h1>
 <span style="color: #686868;display: block;">[作者] 棚子</span>
@@ -85,7 +95,6 @@
 <li>第二步统计标签<br>在需要展示统计的地方，添加统计标签即可。<br>数量统计有两种计算规则，一种是pv(单个用户连续点击n篇文章，记录n次访问量，适合页面阅读量统计)，一种是uv(单个用户连续点击n篇文章，记录1次访问量，适合网站访问人数统计)<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;</span></span><br><span class="line">    本站总访问量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span></span><br><span class="line">    本站访客数<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>以上，Thanks</p>
-
 
 
         
@@ -100,5 +109,11 @@
         </div>
     </div>
     <a href="javascript:window.scrollTo( 0, 0 );" target="_self" style="position: fixed;bottom: 80px;right: 30px;opacity: 1;cursor: pointer;">回到顶部</a>
+	<script>
+		function tagLink(tagName) {
+		  var url = '/tags/' + tagName + '/';
+		  return '<a href="' + url + '">' + tagName + '</a>';
+		}
+	</script>
 </body>
 </html>

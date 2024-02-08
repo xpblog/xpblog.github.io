@@ -64,6 +64,10 @@
         .tags{
             color: #9E9E9E;
         }
+		pre {
+		  white-space: pre-wrap;
+		  text-align: left;
+		}
     </style>
     
 <meta name="generator" content="Hexo 7.0.0"></head>
@@ -72,9 +76,15 @@
         
         <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
             <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; ">棚子家</a> &nbsp;
+			
+				<a href="/tags/%E6%84%9F%E6%82%9F/" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[感悟]</a>
+			
+				<a href="/tags/%E6%8A%80%E6%9C%AF/" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[技术]</a>
+			
 			<a href="/about/index.html" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[关于我]</a>
-        </div>
+		</div>
         
+		
         
             <h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">事，做起来才会有方法</h1>
 <span style="color: #686868;display: block;">[作者] 棚子</span>
@@ -86,7 +96,6 @@
 <p>就是无论什么事情，你要对着一直小黄鸭一直讲清楚事情的来龙去脉。比如，在修复BUG的过程中，我时常会对着代码自言自语，把没一行代码的作用自言自语出来，这个过程中屏幕就是那只“小黄鸭”。有时候不讲出来，细小的问题根本不容易发现，对着屏幕自言自语这也是消除模糊的一个过程。</p>
 <p>除了理清楚问题，还有就是学东西，你不可能随时都能找到一个外行的人。此时，你可以对着水杯、书本等等，假象一只“小黄鸭”，它什么都不懂，什么都知道。你要把你学到的对着它复述一遍。</p>
 <h3 id="消除模糊"><a href="#消除模糊" class="headerlink" title="消除模糊"></a>消除模糊</h3><p>以上几点，终归到底都是一个与模糊对抗的过程。事情越模糊，人越觉得没有把握，只有消除模糊，事情才会理顺，才会有做事的方法。人生就是一个与模糊对抗，消除模糊的过程。</p>
-
 
 
         
@@ -101,5 +110,11 @@
         </div>
     </div>
     <a href="javascript:window.scrollTo( 0, 0 );" target="_self" style="position: fixed;bottom: 80px;right: 30px;opacity: 1;cursor: pointer;">回到顶部</a>
+	<script>
+		function tagLink(tagName) {
+		  var url = '/tags/' + tagName + '/';
+		  return '<a href="' + url + '">' + tagName + '</a>';
+		}
+	</script>
 </body>
 </html>

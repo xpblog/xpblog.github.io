@@ -64,6 +64,10 @@
         .tags{
             color: #9E9E9E;
         }
+		pre {
+		  white-space: pre-wrap;
+		  text-align: left;
+		}
     </style>
     
 <meta name="generator" content="Hexo 7.0.0"></head>
@@ -72,9 +76,15 @@
         
         <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
             <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; ">棚子家</a> &nbsp;
+			
+				<a href="/tags/%E6%84%9F%E6%82%9F/" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[感悟]</a>
+			
+				<a href="/tags/%E6%8A%80%E6%9C%AF/" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[技术]</a>
+			
 			<a href="/about/index.html" style="text-decoration: none;font-size: 1em;font-weight: bold; ">[关于我]</a>
-        </div>
+		</div>
         
+		
         
             <h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">我执与禅</h1>
 <span style="color: #686868;display: block;">[作者] 棚子</span>
@@ -103,7 +113,6 @@
 <p>而对于一个禅学者来说，没有正反面的分别心，就不会有这种游戏，怎么会有烦恼呢？破二元对立能解除一切烦恼。</p>
 <p>2022.5.8 凌晨3:30</p>
 
-
         
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
         <span>Contact me at . <br></span>
@@ -116,5 +125,11 @@
         </div>
     </div>
     <a href="javascript:window.scrollTo( 0, 0 );" target="_self" style="position: fixed;bottom: 80px;right: 30px;opacity: 1;cursor: pointer;">回到顶部</a>
+	<script>
+		function tagLink(tagName) {
+		  var url = '/tags/' + tagName + '/';
+		  return '<a href="' + url + '">' + tagName + '</a>';
+		}
+	</script>
 </body>
 </html>
