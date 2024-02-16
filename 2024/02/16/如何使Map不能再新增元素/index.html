@@ -80,18 +80,12 @@
     <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; letter-spacing: 0.1em;">棚子家</a> &nbsp;
     <a href="javascript:void(0)" onClick="window.history.go(-1)" style="text-decoration: none;font-size: 1em;font-weight: bold; float: right;">「返回」</a>
 </div>
-<h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">禅、正念、当下的力量</h1>
+<h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">如何使Map不能再新增元素?</h1>
 <span style="color: #686868;display: block;">[作者] 棚子</span>
-<span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2023-06-07 23:40:37</span>
-<h3 id="禅"><a href="#禅" class="headerlink" title="禅"></a>禅</h3><p>《六祖坛经·坐禅品第五》：<code>“外离相即禅，内不乱即定。外禅内定，是为禅定。”</code> 禅定者修的是一颗当下的心。</p>
-<h3 id="正念"><a href="#正念" class="headerlink" title="正念"></a>正念</h3><p>正念讲对当下的一切保持全然的觉知。不要做着A事情，心里想的是B事情。感受正在发生的一切。</p>
-<h3 id="当下的力量"><a href="#当下的力量" class="headerlink" title="当下的力量"></a>当下的力量</h3><p>《当下的力量》是埃克哈特·托利的一本书，全书揭示了一切痛苦的根源是因为人没有注意到当下真的自我，痛苦来源于小我对于过去的会议或者对未来的担忧。</p>
-<p><strong>以上，是我对禅，正念，当下的力量的认识。当我把他们放到一起比较的时候，我发现此三者描述的是同一件事情。</strong> 即时刻关注当下脑子里的想法，人是意识的主人，不要被想法牵着走。</p>
-<p>纵观历史，所有人的世界观莫能逃出唯心、唯物这两种。</p>
-<h3 id="唯心"><a href="#唯心" class="headerlink" title="唯心"></a>唯心</h3><p>唯心观的人，将世界上的一切现象都归因于人心。最明显的就是王阳明的心学，“你为看此花时，此花与汝心同归于寂”，花的存不存在全在乎你看不看花，这是典型的唯心观。除此之外，还有大部分宗教都属于唯心观，将世界的变化归因于神灵的“心思”。归因于自己，属于主观唯心论，归因于神灵，属于客观唯心论。</p>
-<h3 id="唯物"><a href="#唯物" class="headerlink" title="唯物"></a>唯物</h3><p>唯物观的人，将世界上的一切变化归因于事物本身。即你看不看花，此花都在。将世界的变化归因于事物与事物之间的是机械唯物主义。将世界的变化归因于事物自身内部的是辩证唯物主义。</p>
-<p>两种观点并无对错，只是认识世界的方式有所不同，仅此而已。</p>
-
+<span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2024-02-16 11:45:27</span>
+<p>Map不能再新增元素，有人会想到final修饰，但是map是引用对象，所以final只能保证Map map &#x3D; new HashMap&lt;&gt;()的引用地址不变，并不能保证map里的元素不能新增。</p>
+<h3 id="利用Collections类提供的方法"><a href="#利用Collections类提供的方法" class="headerlink" title="利用Collections类提供的方法"></a>利用Collections类提供的方法</h3><p><code>Map map = Collections.unmodifiableMap(map)</code>，这样如果再往map中添加元素就会报错。</p>
+<h3 id="自己对map封装"><a href="#自己对map封装" class="headerlink" title="自己对map封装"></a>自己对map封装</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyMap</span>&lt;K,V&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;K,V&gt; map = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyMap</span><span class="params">(Map&lt;K,V&gt; map)</span> &#123;</span><br><span class="line">        map.forEach(<span class="built_in">this</span>.map::put);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> V <span class="title function_">get</span><span class="params">(K key)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> map.get(key);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
