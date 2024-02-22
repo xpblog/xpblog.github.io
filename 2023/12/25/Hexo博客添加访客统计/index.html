@@ -11,7 +11,7 @@
         .highlight, pre{
             line-height: normal;
             letter-spacing: 0;
-            background: #f7f7f7;
+            background: #282b2e;
             color: #4d4d4c;
             margin: 5px auto;
         }
@@ -94,12 +94,22 @@
 <span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2023-12-25 16:03:39</span>
 <h3 id="给博客添加访客统计"><a href="#给博客添加访客统计" class="headerlink" title="给博客添加访客统计"></a>给博客添加访客统计</h3><p>最简单的方式则是用 <a target="_blank" rel="noopener" href="https://ibruce.info/2015/04/04/busuanzi/">不蒜子</a>，仅仅需要两步</p>
 <ul>
-<li>第一步引入js<br>在需要统计的页面引入<code>不蒜子</code>的js<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
-<li>第二步统计标签<br>在需要展示统计的地方，添加统计标签即可。<br>数量统计有两种计算规则，一种是pv(单个用户连续点击n篇文章，记录n次访问量，适合页面阅读量统计)，一种是uv(单个用户连续点击n篇文章，记录1次访问量，适合网站访问人数统计)<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;</span></span><br><span class="line">    本站总访问量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span></span><br><span class="line">    本站访客数<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>第一步引入js<br>在需要统计的页面引入<code>不蒜子</code>的js<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>第二步统计标签<br>在需要展示统计的地方，添加统计标签即可。<br>数量统计有两种计算规则，一种是pv(单个用户连续点击n篇文章，记录n次访问量，适合页面阅读量统计)，一种是uv(单个用户连续点击n篇文章，记录1次访问量，适合网站访问人数统计)<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;span id=<span class="string">&quot;busuanzi_container_site_pv&quot;</span>&gt;</span><br><span class="line">    本站总访问量&lt;span id=<span class="string">&quot;busuanzi_value_site_pv&quot;</span>&gt;&lt;/span&gt;次</span><br><span class="line">&lt;/span&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_container_site_uv&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    本站访客数<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;busuanzi_value_site_uv&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>人次</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <p>以上，Thanks</p>
 
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/androidstudio.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre span').forEach((el) => {
+    hljs.highlightElement(el);
+    });
+  });
+</script>
         
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
         <span>            Contact me at <a href= "mailto:xpblog@163.com" style="text-decoration:none">E-mail</a><br></span>

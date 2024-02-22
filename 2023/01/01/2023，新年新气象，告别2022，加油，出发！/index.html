@@ -11,7 +11,7 @@
         .highlight, pre{
             line-height: normal;
             letter-spacing: 0;
-            background: #f7f7f7;
+            background: #282b2e;
             color: #4d4d4c;
             margin: 5px auto;
         }
@@ -98,6 +98,16 @@
 <h3 id="好习惯"><a href="#好习惯" class="headerlink" title="好习惯"></a>好习惯</h3><p>人的价值在于与外界进行交换。而写文章是一个很好的工具逼自己同外界进行信息交换。所以2023年要养成写作的好习惯。</p>
 
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/androidstudio.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre span').forEach((el) => {
+    hljs.highlightElement(el);
+    });
+  });
+</script>
         
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
         <span>            Contact me at <a href= "mailto:xpblog@163.com" style="text-decoration:none">E-mail</a><br></span>

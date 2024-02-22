@@ -11,7 +11,7 @@
         .highlight, pre{
             line-height: normal;
             letter-spacing: 0;
-            background: #f7f7f7;
+            background: #282b2e;
             color: #4d4d4c;
             margin: 5px auto;
         }
@@ -104,6 +104,16 @@
 <p>所以，放下你手中的速成、速看教程吧，不如留点时间去读读原著，看看原片，去经历，去成长。</p>
 
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/androidstudio.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre span').forEach((el) => {
+    hljs.highlightElement(el);
+    });
+  });
+</script>
         
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
         <span>            Contact me at <a href= "mailto:xpblog@163.com" style="text-decoration:none">E-mail</a><br></span>
