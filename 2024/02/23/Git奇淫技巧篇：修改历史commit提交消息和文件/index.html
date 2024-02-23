@@ -94,22 +94,22 @@
 <span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2024-02-23 17:24:03</span>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在使用git过程中，可能有这样一种需求。多个功能A，B，C依次开发(A，B功能还没上线)，开发C功能的时候，A功能有BUG需要修复</p>
 <p>这种情况下，可以重新拉取分支修复…有多种方案。但是，如果不想有多余提交记录，只是想在原来的那次提交上修复的话，怎么办？</p>
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>比如，我的多次提交记录如下，我想修改第二次的提交文件<br>!()[Git奇淫技巧篇：修改历史commit提交消息和文件&#x2F;1.jpg]</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>比如，我的多次提交记录如下，我想修改第二次的提交文件<br><img src="http://xpblog.github.io/2024/02/23/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9A%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2commit%E6%8F%90%E4%BA%A4%E6%B6%88%E6%81%AF%E5%92%8C%E6%96%87%E4%BB%B6/1.jpg"></p>
 <p>rebase HEAD 到要修改的地方</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rebase -i HEAD~3</span><br></pre></td></tr></table></figure>
 
-<p>!()[Git奇淫技巧篇：修改历史commit提交消息和文件&#x2F;2.jpg]</p>
+<p><img src="http://xpblog.github.io/2024/02/23/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9A%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2commit%E6%8F%90%E4%BA%A4%E6%B6%88%E6%81%AF%E5%92%8C%E6%96%87%E4%BB%B6/2.jpg"></p>
 <p>按i键，在要编辑的提交记录前面，把pick改成edit(或者e)，ESC，按<code>:wq</code>保存退出</p>
-<p>!()[Git奇淫技巧篇：修改历史commit提交消息和文件&#x2F;3.jpg]</p>
+<p><img src="http://xpblog.github.io/2024/02/23/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9A%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2commit%E6%8F%90%E4%BA%A4%E6%B6%88%E6%81%AF%E5%92%8C%E6%96%87%E4%BB%B6/3.jpg"></p>
 <p>此时的git分支信息变成了(master|REBASE 1&#x2F;3)，此时就可以去编辑你要编辑的文件了，修复BUG…此时文件就处于你编辑的那次提交的状态</p>
-<p>!()[Git奇淫技巧篇：修改历史commit提交消息和文件&#x2F;4.jpg]</p>
+<p><img src="http://xpblog.github.io/2024/02/23/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9A%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2commit%E6%8F%90%E4%BA%A4%E6%B6%88%E6%81%AF%E5%92%8C%E6%96%87%E4%BB%B6/4.jpg"></p>
 <p>编辑完成后，就可以提交代码了</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 覆盖之前的commit</span><br><span class="line">git commit --amend</span><br><span class="line"></span><br><span class="line">// 继续rebase,如果有冲突则解决冲突</span><br><span class="line">git rebase --<span class="built_in">continue</span></span><br></pre></td></tr></table></figure>
 
 <p>代码可能有冲突，有冲突则解决冲突后，再 <code>git rebase --continue</code>，同时，还是编辑那次提交的commit信息，编辑完成后<code>:wq</code>，保存退出</p>
-<p>!()[Git奇淫技巧篇：修改历史commit提交消息和文件&#x2F;5.jpg]</p>
+<p><img src="http://xpblog.github.io/2024/02/23/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9A%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2commit%E6%8F%90%E4%BA%A4%E6%B6%88%E6%81%AF%E5%92%8C%E6%96%87%E4%BB%B6/5.jpg"></p>
 <p>再次查看提交信息，发现已经变成我们修改后的文件了</p>
-<p>!()[Git奇淫技巧篇：修改历史commit提交消息和文件&#x2F;6.jpg]</p>
+<p><img src="http://xpblog.github.io/2024/02/23/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9A%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2commit%E6%8F%90%E4%BA%A4%E6%B6%88%E6%81%AF%E5%92%8C%E6%96%87%E4%BB%B6/6.jpg"></p>
 <p>如果在rebase过程中，不想修改了，则可以退出rebase</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rebase --abort</span><br></pre></td></tr></table></figure>
 
