@@ -11,15 +11,12 @@
 		body{
 			width: 600px;
 		}
-        .highlight{
-            margin: 1em;
-        }
         .highlight, pre{
             line-height: normal;
             letter-spacing: 0;
-            background: #282b2e;
+            background: #f8f8ff;
             color: #4d4d4c;
-            margin: 5px auto;
+            margin: 1em;
         }
         ul li {
             line-height: 2;
@@ -61,11 +58,14 @@
             content: ' #';
             color: #000;
         }
-        h1,h2,h3,h4,h5,h6{
+        h1{
+            text-align: left;    
+        }
+        h2,h3,h4,h5,h6{
             text-decoration: dashed;
-            background: #e7e7e7;
-            padding: 4px;
+            padding: 2em;
             letter-spacing: 2px;
+            text-align: center;
         }
         .tags{
             color: #9E9E9E;
@@ -117,7 +117,7 @@
 <h3 id="利用Collections类提供的方法"><a href="#利用Collections类提供的方法" class="headerlink" title="利用Collections类提供的方法"></a>利用Collections类提供的方法</h3><p><code>Map map = Collections.unmodifiableMap(map)</code>，这样如果再往map中添加元素就会报错。</p>
 <h3 id="自己对map封装"><a href="#自己对map封装" class="headerlink" title="自己对map封装"></a>自己对map封装</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyMap</span>&lt;K,V&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;K,V&gt; map = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyMap</span><span class="params">(Map&lt;K,V&gt; map)</span> &#123;</span><br><span class="line">        map.forEach(<span class="built_in">this</span>.map::put);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> V <span class="title function_">get</span><span class="params">(K key)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> map.get(key);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/androidstudio.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/docco.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 
 <script>
