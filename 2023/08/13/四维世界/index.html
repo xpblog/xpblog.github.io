@@ -136,6 +136,10 @@
   });
 </script>
         
+
+        <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
+            <span style="display: block;border-top:2px solid chartreuse;display:block;" id="timeSpan">
+        </div>
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
         <span>            Contact me at <a href= "mailto:xpblog@163.com" style="text-decoration:none">E-mail</a><br></span>
         
@@ -146,6 +150,7 @@
             </span>
         
         </div>
+
     </div>
     <a href="javascript:window.scrollTo( 0, 0 );" target="_self" style="position: fixed;bottom: 80px;right: 30px;opacity: 1;cursor: pointer;">回到顶部</a>
 	<script>
@@ -174,6 +179,20 @@
             });
         });
 
+        function getYearProgressPercentage() {
+        const now = new Date();
+        const yearStart = new Date(now.getFullYear(), 0, 1);
+        const yearEnd = new Date(now.getFullYear(), 11, 31);
+        const timeElapsed = now - yearStart;
+        const totalTime = yearEnd - yearStart;
+        const progressPercentage = (timeElapsed / totalTime) * 100;
+        return progressPercentage.toFixed(2); // 保留两位小数
+        }
+        
+        console.log(getYearProgressPercentage()); // 输出今年的时间流逝百分比
+        const el = document.getElementById('timeSpan')
+        console.log(el)
+        el.style.width = getYearProgressPercentage() + "%"
 	</script>
 </body>
 </html>
