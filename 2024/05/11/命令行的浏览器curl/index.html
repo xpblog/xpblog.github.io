@@ -107,272 +107,33 @@
     <div>
         
 		
+        
             <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
     <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; letter-spacing: 0.1em;">棚子家</a> &nbsp;
-    <a  href="javascript:void(0)" onClick="window.history.go(-1)" style="text-decoration: none;font-size: 1em;font-weight: bold; float: right;">「返回」</a>
+    <a href="javascript:void(0)" onClick="window.history.go(-1)" style="text-decoration: none;font-size: 1em;font-weight: bold; float: right;">「返回」</a>
 </div>
-<h3>感悟</h3>
+<h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">命令行的浏览器curl</h1>
+<span style="color: #686868;display: block;">[作者] 棚子</span>
+<span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2024-05-11 15:27:57</span>
+<h3 id="curl基本命令"><a href="#curl基本命令" class="headerlink" title="curl基本命令"></a>curl基本命令</h3><p>curl是一个发送网络请求，并将响应打印到控制台的命令。相当于是命令行里的“浏览器”。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl wwww.baidu.com</span><br></pre></td></tr></table></figure>
+<p>返回：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--STATUS OK--&gt;</span><span class="tag">&lt;<span class="name">html</span>&gt;</span> <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">content-type</span> <span class="attr">content</span>=<span class="string">text/html;charset</span>=<span class="string">utf-8</span>&gt;</span><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">X-UA-Compatible</span> <span class="attr">content</span>=<span class="string">IE</span>=<span class="string">Edge</span>&gt;</span><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">always</span> <span class="attr">name</span>=<span class="string">referrer</span>&gt;</span><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">stylesheet</span> <span class="attr">type</span>=<span class="string">text/css</span> <span class="attr">href</span>=<span class="string">http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span>百度一下，你就知道<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span> <span class="tag">&lt;<span class="name">body</span>&gt;</span>...<span class="tag">&lt;/<span class="name">body</span>&gt;</span> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-  
-  
-    
-  
-  
+<h3 id="常用的参数命令"><a href="#常用的参数命令" class="headerlink" title="常用的参数命令"></a>常用的参数命令</h3><p><strong>-X</strong> 指定发送的请求类型。比如GET请求，POST请求，PUT请求…<br><strong>-H</strong> 指定请求头信息，**-d** 指定body信息(-d,d代表data)<br><strong>-A</strong> 指定客户端代理表头，即User-Agent<br><strong>-b</strong> 指定Cookie，例如-b ‘user&#x3D;Make’，就会有一个Cookie: user&#x3D;Make的请求头</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 发送GET请求</span></span><br><span class="line">curl http://www.baidu.com</span><br><span class="line"></span><br><span class="line">curl -X GET http://www.baidu.com</span><br><span class="line"></span><br><span class="line">curl -A <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&#x27;</span> http://www.baidu.com</span><br><span class="line"></span><br><span class="line">curl -b <span class="string">&#x27;user=Make&#x27;</span> http://www.baidu.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送POST请求</span></span><br><span class="line">curl -X POST http://www.baidu.com</span><br><span class="line"></span><br><span class="line">curl -X POST -H <span class="string">&quot;Content-Type:application/json&quot;</span> -d <span class="string">&#x27;&#123;&quot;name&quot;:&quot;Make&quot;&#125;&#x27;</span> http://www.baidu.com</span><br></pre></td></tr></table></figure>
 
-  
-  
-    
-  
-  
 
-  
-  
-    
-  
-  
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/docco.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2024/02/06 
-		<a href="/2024/02/06/%E4%BA%8B%EF%BC%8C%E5%81%9A%E8%B5%B7%E6%9D%A5%E6%89%8D%E4%BC%9A%E6%9C%89%E6%96%B9%E6%B3%95/" style="padding:1px;color: blue;">
-			事，做起来才会有方法 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2024/01/03 
-		<a href="/2024/01/03/2024%EF%BC%8C%E5%86%8D%E5%87%BA%E5%8F%91/" style="padding:1px;color: blue;">
-			2024，再出发 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2023/12/21 
-		<a href="/2023/12/21/%E4%B9%9F%E8%B0%88%E9%99%8D%E7%BB%B4%E6%89%93%E5%87%BB/" style="padding:1px;color: blue;">
-			也谈降维打击 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2023/08/13 
-		<a href="/2023/08/13/%E5%9B%9B%E7%BB%B4%E4%B8%96%E7%95%8C/" style="padding:1px;color: blue;">
-			四维世界 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2023/06/07 
-		<a href="/2023/06/07/%E7%A6%85%E3%80%81%E6%AD%A3%E5%BF%B5%E3%80%81%E5%BD%93%E4%B8%8B%E7%9A%84%E5%8A%9B%E9%87%8F/" style="padding:1px;color: blue;">
-			禅、正念、当下的力量 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2023/05/07 
-		<a href="/2023/05/07/%E7%BB%8F%EF%BC%9A%E6%88%91%E7%9A%84%E7%9C%8B%E6%B3%95/" style="padding:1px;color: blue;">
-			经：我的看法 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2023/03/04 
-		<a href="/2023/03/04/%E7%A5%96%E5%B8%88%E7%95%99%E4%B8%8B%E6%B3%95%EF%BC%8C%E6%83%9C%E6%97%A0%E4%BC%A0%E6%B3%95%E4%BA%BA/" style="padding:1px;color: blue;">
-			祖师留下法，惜无传法人 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2023/01/05 
-		<a href="/2023/01/05/%E8%84%9A%E6%AD%A5%E6%85%A2%E4%B8%8B%E6%9D%A5%EF%BC%8C%E6%89%8D%E8%83%BD%E6%AC%A3%E8%B5%8F%E5%91%A8%E5%9B%B4%E7%9A%84%E9%A3%8E%E6%99%AF/" style="padding:1px;color: blue;">
-			脚步慢下来，才能欣赏周围的风景 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2023/01/01 
-		<a href="/2023/01/01/2023%EF%BC%8C%E6%96%B0%E5%B9%B4%E6%96%B0%E6%B0%94%E8%B1%A1%EF%BC%8C%E5%91%8A%E5%88%AB2022%EF%BC%8C%E5%8A%A0%E6%B2%B9%EF%BC%8C%E5%87%BA%E5%8F%91%EF%BC%81/" style="padding:1px;color: blue;">
-			2023，新年新气象，告别2022，加油，出发！ 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2022/05/08 
-		<a href="/2022/05/08/%E6%88%91%E6%89%A7%E4%B8%8E%E7%A6%85/" style="padding:1px;color: blue;">
-			我执与禅 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E6%84%9F%E6%82%9F/" class="tags" style="text-decoration: none;float: left;">「感悟」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-<br>
-        
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre span').forEach((el) => {
+    hljs.highlightElement(el);
+    });
+  });
+</script>
         
 
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
@@ -382,10 +143,10 @@
         <span>            Contact me at <a href= "mailto:xpblog@163.com" style="text-decoration:none">E-mail</a><br></span>
         
         
-            <span id="busuanzi_container_site_uv"  style="line-height: 1.5;">
-                [本站第 <span id="busuanzi_value_site_uv" style="font-weight: bold;"></span> 位客人]
-            </span>
         
+            <span id="busuanzi_container_page_pv"  style="line-height: 1.5;">
+                [阅读量 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次]
+            </span>
         
         </div>
 
