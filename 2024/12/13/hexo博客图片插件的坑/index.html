@@ -115,10 +115,10 @@
 <h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">Hexo博客图片插件的坑</h1>
 <span style="color: #686868;display: block;">[作者] 棚子</span>
 <span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2024-12-13 14:46:47</span>
-<p>许久没写博客，换了电脑。从github上拉下来hexo博客，一顿操作。图片连接全error</p>
+<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>许久没写博客，换了电脑。从github上拉下来hexo博客，一顿操作。图片连接全error</p>
 <p><img src="0.jpg"></p>
 <p>通过查询，才知道hexo-asset-image插件有坑<br>npm install后，需要修改hexo-asset-image&#x2F;index.js代码</p>
-<p><strong>重点来了</strong><br>位置在58-59行，将原来获取图片路径的代码注释掉，改成下面的</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p><strong>重点来了</strong><br>位置在58-59行，将原来获取图片路径的代码注释掉，改成下面的</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// $(this).attr(&#x27;src&#x27;, config.root + link + src);</span></span><br><span class="line"><span class="comment">// console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span></span><br><span class="line"></span><br><span class="line">$(<span class="variable language_">this</span>).<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>, src);</span><br><span class="line"><span class="variable language_">console</span>.<span class="property">info</span> &amp;&amp; <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;update link as:--&gt;&quot;</span> + src);</span><br></pre></td></tr></table></figure>
 <p>修改后 hexo clean<br>然后再 hexo s 图片回来了</p>
 
