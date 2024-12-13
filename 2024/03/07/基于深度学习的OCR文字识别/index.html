@@ -122,9 +122,9 @@
 
 <h3 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> easyocr</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 指定图片路径</span></span><br><span class="line">    P = <span class="string">&quot;p.png&quot;</span></span><br><span class="line">    reader = easyocr.Reader([<span class="string">&#x27;ch_sim&#x27;</span>], gpu=<span class="literal">True</span>, model_storage_directory=<span class="string">&#x27;./EasyOCR&#x27;</span>, download_enabled=<span class="literal">True</span>)</span><br><span class="line">    result = reader.readtext(P, detail=<span class="number">0</span>)</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
 
-<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p><img src="/%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84OCR%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/1.jpg"></p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p><img src="1.jpg"></p>
 <p>比如上面这张图片，我们看下识别效果</p>
-<p><img src="/%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84OCR%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/2.jpg"></p>
+<p><img src="2.jpg"></p>
 <p>识别效果还是不错的</p>
 
 

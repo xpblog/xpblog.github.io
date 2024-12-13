@@ -116,12 +116,12 @@
 <span style="color: #686868;display: block;">[作者] 棚子</span>
 <span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2024-02-27 15:46:05</span>
 <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>事情是这样的，我写完代码提交到了本地。然后手贱突然想该点东西reset到了上个节点。因为是用idea的图形化git操作的，没有注意分支，直接reset到了另一个分支的上个节点。</p>
-<p><img src="/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9Areflog%EF%BC%81%E7%9C%9F%E6%9C%89%E5%90%8E%E6%82%94%E8%8D%AF/0.jpg"></p>
+<p><img src="0.jpg"></p>
 <p>这中间隔了好几次提交，丢失了。</p>
 <h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>不过，还在有 reflog 这个本地后悔药</p>
-<p><img src="/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9Areflog%EF%BC%81%E7%9C%9F%E6%9C%89%E5%90%8E%E6%82%94%E8%8D%AF/1.jpg"></p>
+<p><img src="1.jpg"></p>
 <p>日常查看git提交历史，都用 git log 这个命令。而 git reflog 这个命令是记录了本地的所有操作记录</p>
-<p><img src="/Git%E5%A5%87%E6%B7%AB%E6%8A%80%E5%B7%A7%E7%AF%87%EF%BC%9Areflog%EF%BC%81%E7%9C%9F%E6%9C%89%E5%90%8E%E6%82%94%E8%8D%AF/2.jpg"></p>
+<p><img src="2.jpg"></p>
 <p>aa4c296 这个版本号，就是我们恢复时使用的版本号</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset aa4c296</span><br></pre></td></tr></table></figure>
 
