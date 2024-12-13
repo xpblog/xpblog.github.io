@@ -107,158 +107,32 @@
     <div>
         
 		
+        
             <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
     <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; letter-spacing: 0.1em;">棚子家</a> &nbsp;
-    <a  href="javascript:void(0)" onClick="window.history.go(-1)" style="text-decoration: none;font-size: 1em;font-weight: bold; float: right;">「返回」</a>
+    <a href="javascript:void(0)" onClick="window.history.go(-1)" style="text-decoration: none;font-size: 1em;font-weight: bold; float: right;">「返回」</a>
 </div>
-<h3>解书</h3>
+<h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">Hexo博客图片插件的坑</h1>
+<span style="color: #686868;display: block;">[作者] 棚子</span>
+<span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2024-12-13 14:46:47</span>
+<p>许久没写博客，换了电脑。从github上拉下来hexo博客，一顿操作。图片连接全error</p>
+<p><img src="0.jpg"></p>
+<p>通过查询，才知道hexo-asset-image插件有坑<br>npm install后，需要修改hexo-asset-image&#x2F;index.js代码</p>
+<p><strong>重点来了</strong><br>位置在58-59行，将原来获取图片路径的代码注释掉，改成下面的</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// $(this).attr(&#x27;src&#x27;, config.root + link + src);</span></span><br><span class="line"><span class="comment">// console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span></span><br><span class="line"></span><br><span class="line">$(<span class="variable language_">this</span>).<span class="title function_">attr</span>(<span class="string">&#x27;src&#x27;</span>, src);</span><br><span class="line"><span class="variable language_">console</span>.<span class="property">info</span> &amp;&amp; <span class="variable language_">console</span>.<span class="title function_">info</span>(<span class="string">&quot;update link as:--&gt;&quot;</span> + src);</span><br></pre></td></tr></table></figure>
+<p>修改后 hexo clean<br>然后再 hexo s 图片回来了</p>
 
-  
-  
-    
-  
-  
 
-  
-  
-    
-  
-  
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/docco.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
 
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2024/05/09 
-		<a href="/2024/05/09/%E3%80%8A%E9%81%93%E5%BE%B7%E7%BB%8F%E3%80%8B-%E6%9C%80%E6%97%A9%E7%9A%84%E5%BC%80%E6%BA%90%E7%B2%BE%E7%A5%9E/" style="padding:1px;color: blue;">
-			《道德经》| 最早的开源精神 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E8%A7%A3%E4%B9%A6/" class="tags" style="text-decoration: none;float: left;">「解书」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-      
-    
-  
-  
-    <span style="display: block; margin-top: 6px;">
-		2024/05/07 
-		<a href="/2024/05/07/%E3%80%8A%E9%81%93%E5%BE%B7%E7%BB%8F%E3%80%8B-%E6%9C%89%E7%94%9F%E4%BA%8E%E6%97%A0%EF%BC%8C%E9%81%93%E7%9A%84%E4%B8%A4%E9%9D%A2%E6%80%A7/" style="padding:1px;color: blue;">
-			《道德经》| 有生于无，道的两面性 
-		</a> &nbsp;
-		
-			<span style="float: right;;">
-				<a href="/tags/%E8%A7%A3%E4%B9%A6/" class="tags" style="text-decoration: none;float: left;">「解书」</a>
-			</span>
-		
-		<br>
-    </span>
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-  
-  
-    
-  
-  
-
-<br>
-        
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre span').forEach((el) => {
+    hljs.highlightElement(el);
+    });
+  });
+</script>
         
 
         <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
@@ -268,10 +142,10 @@
         <span>            Contact me at <a href= "mailto:xpblog@163.com" style="text-decoration:none">E-mail</a><br></span>
         
         
-            <span id="busuanzi_container_site_uv"  style="line-height: 1.5;">
-                [本站第 <span id="busuanzi_value_site_uv" style="font-weight: bold;"></span> 位客人]
-            </span>
         
+            <span id="busuanzi_container_page_pv"  style="line-height: 1.5;">
+                [阅读量 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次]
+            </span>
         
         </div>
 
