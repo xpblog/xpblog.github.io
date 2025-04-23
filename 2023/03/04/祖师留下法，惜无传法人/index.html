@@ -101,6 +101,20 @@
             position: relative;
             text-align: center;
         }
+		.new-flag {
+			background-color: red;
+			color: yellow;
+			font-size: 8px;
+			font-weight: bold;
+			font-family: Arial, sans-serif;
+			animation: flash-forum 1s steps(2, start) infinite;
+		}
+
+		@keyframes flash-forum {
+			0%   { opacity: 1; }
+			50%  { opacity: 0; }
+			100% { opacity: 1; }
+		}
     </style>
     
 <meta name="generator" content="Hexo 7.3.0"></head>
