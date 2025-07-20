@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>棚子家</title>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js"> </script>
+    <style>
+		body{
+			width: 600px;
+		}
+        .highlight, pre{
+            line-height: normal;
+            letter-spacing: 0;
+            background: #f8f8ff;
+            color: #4d4d4c;
+            margin: 1em;
+        }
+        ul li {
+            line-height: 2;
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+        div > p {
+            margin: 0;
+            padding: 0.5rem;
+            overflow: auto;
+            line-height: 2;
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+        blockquote {
+            padding-left: 25px;
+            padding-top: 10px;
+            padding-right: 25px;
+            line-height: 20px;
+            font-weight: bolder;
+            padding-bottom: 10px;
+            background: #f7f7f7; 
+            border-left: 15px solid #ffffff;
+            text-align: left;
+            /* border-radius: 15px; */
+            margin-left: 1rem;
+        }
+        blockquote::before{
+            content: "###";
+            color: #c97c7c;
+        }
+        blockquote::after{
+            content: "###";
+            color: #c97c7c;
+        }
+        h1::before,h2::before,h3::before,h4::before,h5::before,h6::before{
+            content: '# ';
+            color: #000;
+        }
+        h1::after,h2::after,h3::after,h4::after,h5::after,h6::after{
+            content: ' #';
+            color: #000;
+        }
+        h1{
+            text-align: left;    
+        }
+        h2,h3,h4,h5,h6{
+            text-decoration: dashed;
+            padding: 0.5em;
+            letter-spacing: 2px;
+            text-align: left;
+            background: #f3f3f3;
+        }
+        .tags{
+            color: #9E9E9E;
+        }
+		pre {
+		  white-space: pre-wrap;
+		  text-align: left;
+		}
+        
+        p > a > img {
+            width: 600px;
+            max-width: 90%;
+            margin: 1.5rem auto;
+            display: block;
+            border-radius: 7px;
+            border: 1px solid #cfcfcf;
+        }
+        
+        .markdown-section img {
+            padding: 0.5em 0;
+            margin: auto;
+            display: block;
+        }
+
+        .caption {
+            color: #444;
+            display: block;
+            font-size: 0.9em;
+            margin-top: 0.1em;
+            position: relative;
+            text-align: center;
+        }
+		.new-flag {
+			background-color: red;
+			color: yellow;
+			font-size: 8px;
+			font-weight: bold;
+			font-family: Arial, sans-serif;
+			animation: flash-forum 1s steps(2, start) infinite;
+		}
+
+		@keyframes flash-forum {
+			0%   { opacity: 1; }
+			50%  { opacity: 0; }
+			100% { opacity: 1; }
+		}
+    </style>
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body style="font-family: monospace; margin-right:auto; margin-left: auto; padding: 0.5em;"> <!--border: 1px dashed #595858;-->
+    <div>
+        
+		
+        
+            <div style="border-bottom: 1px dashed #595858;padding-bottom: 0.5em;">
+    <a href="/" style="text-decoration: none;font-size: 1.2em;font-weight: bold; letter-spacing: 0.1em;">棚子家</a> &nbsp;
+    <a href="javascript:void(0)" onClick="window.history.go(-1)" style="text-decoration: none;font-size: 1em;font-weight: bold; float: right;">「返回」</a>
+</div>
+<h1 style="background-color: #f3f3f3;border: 1px dashed #515151;padding: 5px;font-size: 1.5em;color: #000;text-decoration: none;">Git奇淫技巧篇：修改历史commit提交消息和文件</h1>
+<span style="color: #686868;display: block;">[作者] 棚子</span>
+<span style="color: #c97c7c;display: block;padding-bottom: 1em;border-bottom:1px solid #e7e7e7;;">[创建时间] 2024-02-23 17:24:03</span>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在使用git过程中，可能有这样一种需求。多个功能A，B，C依次开发(A，B功能还没上线)，开发C功能的时候，A功能有BUG需要修复</p>
+<p>这种情况下，可以重新拉取分支修复…有多种方案。但是，如果不想有多余提交记录，只是想在原来的那次提交上修复的话，怎么办？</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>比如，我的多次提交记录如下，我想修改第二次的提交文件<br><img src="git1.jpg"></p>
+<p>rebase HEAD 到要修改的地方</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rebase -i HEAD~3</span><br></pre></td></tr></table></figure>
+
+<p><img src="git2.jpg"></p>
+<p>按i键，在要编辑的提交记录前面，把pick改成edit(或者e)，ESC，按<code>:wq</code>保存退出</p>
+<p><img src="git3.jpg"></p>
+<p>此时的git分支信息变成了(master|REBASE 1&#x2F;3)，此时就可以去编辑你要编辑的文件了，修复BUG…此时文件就处于你编辑的那次提交的状态</p>
+<p><img src="git4.jpg"></p>
+<p>编辑完成后，就可以提交代码了</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 覆盖之前的commit</span><br><span class="line">git commit --amend</span><br><span class="line"></span><br><span class="line">// 继续rebase,如果有冲突则解决冲突</span><br><span class="line">git rebase --<span class="built_in">continue</span></span><br></pre></td></tr></table></figure>
+
+<p>代码可能有冲突，有冲突则解决冲突后，再 <code>git rebase --continue</code>，同时，还是编辑那次提交的commit信息，编辑完成后<code>:wq</code>，保存退出</p>
+<p><img src="git5.jpg"></p>
+<p>再次查看提交信息，发现已经变成我们修改后的文件了</p>
+<p><img src="git6.jpg"></p>
+<p>如果在rebase过程中，不想修改了，则可以退出rebase</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rebase --abort</span><br></pre></td></tr></table></figure>
+
+<h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><ol>
+<li>如果git提交的次数不够多，在 <code>git rebase -i HEAD~5</code> 数字过大，会报错 <code>fatal: invalid upstream &#39;HEAD~6&#39;</code></li>
+</ol>
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/docco.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelectorAll('pre span').forEach((el) => {
+    hljs.highlightElement(el);
+    });
+  });
+</script>
+        
+
+        <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
+            <span style="display: block;border-top:2px solid chartreuse;display:block;" id="timeSpan">
+        </div>
+        <div style="border-top: 1px dashed #595858;padding-top: 0.5em;margin-top: 0.5em;">
+        <span>            Contact me at <a href= "mailto:xpblog@163.com" style="text-decoration:none">E-mail</a><br></span>
+        
+        
+        
+            <span id="busuanzi_container_page_pv"  style="line-height: 1.5;">
+                [阅读量 <span id="busuanzi_value_page_pv" style="font-weight: bold;"></span> 次]
+            </span>
+        
+        </div>
+
+    </div>
+    <a href="javascript:window.scrollTo( 0, 0 );" target="_self" style="position: fixed;bottom: 80px;right: 30px;opacity: 1;cursor: pointer;">回到顶部</a>
+	<script>
+		function tagLink(tagName) {
+		  var url = '/tags/' + tagName + '/';
+		  return '<a href="' + url + '">' + tagName + '</a>';
+		}
+
+        $(document).ready(function() {
+            $('img').each(function() {
+            if ($(this).parent().hasClass('fancybox')) return;
+            if ($(this).hasClass('nofancybox')) return;
+            var alt = this.alt;
+            if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+            $(this).wrap('<a href="' + ($(this).attr('data-src') == null ? this.src : $(this).attr('data-src')) + '" title="' + alt + '" class="fancybox"></a>');
+            });
+            $(this).find('.fancybox').each(function(){
+            $(this).attr('rel', 'article');
+            });
+        });
+        $(document).ready(function() {
+            $("a[href$='.jpg'],a[href$='.png'],a[href$='.gif'],a[href$='.webp']").attr('rel', 'gallery').fancybox({
+            helpers : {
+            title: { type: 'inside'}
+            }
+            });
+        });
+
+        function getYearProgressPercentage() {
+        const now = new Date();
+        const yearStart = new Date(now.getFullYear(), 0, 1);
+        const yearEnd = new Date(now.getFullYear(), 11, 31);
+        const timeElapsed = now - yearStart;
+        const totalTime = yearEnd - yearStart;
+        const progressPercentage = (timeElapsed / totalTime) * 100;
+        return progressPercentage.toFixed(2); // 保留两位小数
+        }
+        
+        console.log(getYearProgressPercentage()); // 输出今年的时间流逝百分比
+        const el = document.getElementById('timeSpan')
+        console.log(el)
+        el.style.width = getYearProgressPercentage() + "%"
+	</script>
+</body>
+</html>
